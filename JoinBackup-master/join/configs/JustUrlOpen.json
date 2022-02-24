@@ -1,0 +1,37 @@
+    {
+	"name": "Join Browser Testing",
+	"callable": true,
+	"grids": [
+		{
+			"type": "local",
+			"url": "http://localhost:4444/wd/hub"
+		}
+	],
+	"tests": [
+		{
+			"name": "AddParticipant %ts",
+			"tupleSize": 1,
+			"description": "searches for telebu and initiate call",
+			"testImpl": "Core3.AddingInCore3Test",
+			"payload": {
+				"takeScreenshotForEachTest": true,
+				"meetingDuration": 60,
+				"multiThread": false
+			}
+		}
+	],
+	"clients": [
+		{
+			"browserName": "chrome",
+			"platform": "WINDOWS",
+			"useFakeMedia": true,
+			"technologyPreview": true,
+			"audio": {
+				"directory": "C:\\Users\\smsc\\Desktop\\kitefromgithub\\",
+				"filename": "audio",
+				"duration": "01:00:00",
+				"type": "Audio"
+				}
+		}
+	]
+}

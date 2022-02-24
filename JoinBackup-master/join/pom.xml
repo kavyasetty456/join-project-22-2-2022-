@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  
+  
+  <parent>
+    <groupId>org.webrtc.kite</groupId>
+    <artifactId>kite-base</artifactId>
+    <version>2.0.8</version>
+  </parent>
+
+  <groupId>Kite</groupId>
+  <artifactId>join</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>join</name>
+  <url>http://maven.apache.org</url>
+
+ <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${kite.test.mvn.compiler.version}</version>
+        <configuration>
+          <source>${kite.java.version}</source>
+          <target>${kite.java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.6</version>
+        <configuration>
+          <workingDirectory>js/</workingDirectory>
+          <installDirectory>../</installDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <phase>generate-resources</phase>
+            <configuration>
+              <nodeVersion>${kite.node.version}</nodeVersion>
+              <npmVersion>${kite.npm.version}</npmVersion>
+            </configuration>
+          </execution>
+          
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+  
+   <dependency>
+      <groupId>org.webrtc.kite</groupId>
+      <artifactId>kite-framework</artifactId>
+      <version>${kite.framework.version}</version>
+    </dependency>
+      </dependencies>
+</project>

@@ -1,0 +1,45 @@
+    {
+	"name": "Join Browser Testing",
+	"callable": true,
+	"grids": [
+		{
+			"type": "local",
+			"url": "http://192.168.73.59:4444/wd/hub"
+		}
+	],
+	"tests": [
+		{
+			"name": "AddParticipant %ts",
+			"tupleSize": 21,
+			"description": "searches for telebu and initiate call",
+			"testImpl": "org.webrtc.kite.sample.test.AddParticipantInWebinar",
+			"payload": {
+				"takeScreenshotForEachTest": true,
+				"meetingDuration": 60,
+				"multiThread": true
+				
+			}
+		}
+	],
+	"clients": [
+		{
+			"browserName": "chrome",
+			"platform": "WINDOWS",
+			"useFakeMedia": true,
+			"technologyPreview": true,
+			"logPrefs" : true,
+			"_video": {
+				"directory": "D:\\4people\\",
+				"filename": "FourPeople_1280x720_60",
+				"duration": "01:00:00",
+				"type": "Video"
+			},
+			"_audio": {
+				"directory": "C:\\Users\\smsc\\Desktop\\home\\ubuntu\\Audios\\",
+				"filename": "e-dv548_lwe08_christa_casebeer_003 ",
+				"duration": "01:00:00",
+				"type": "Audio"
+			}
+		}
+	]
+}
